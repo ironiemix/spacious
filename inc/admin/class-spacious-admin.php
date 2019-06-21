@@ -23,8 +23,8 @@ if ( ! class_exists( 'Spacious_Admin' ) ) :
 		 */
 		public function __construct() {
 			add_action( 'admin_menu', array( $this, 'admin_menu' ) );
-			add_action( 'wp_loaded', array( __CLASS__, 'hide_notices' ) );
-			add_action( 'wp_loaded', array( $this, 'admin_notice' ) );
+			#add_action( 'wp_loaded', array( __CLASS__, 'hide_notices' ) );
+			#add_action( 'wp_loaded', array( $this, 'admin_notice' ) );
 			add_action( 'wp_ajax_import_button', array( $this, 'spacious_ajax_import_button_handler' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'spacious_ajax_enqueue_scripts' ) );
 		}
@@ -149,7 +149,7 @@ if ( ! class_exists( 'Spacious_Admin' ) ) :
 		 * Add admin notice.
 		 */
 		public function admin_notice() {
-			global $spacious_version, $pagenow;
+/*			global $spacious_version, $pagenow;
 
 			wp_enqueue_style( 'spacious-message', get_template_directory_uri() . '/css/admin/message.css', array(), $spacious_version );
 
@@ -157,7 +157,7 @@ if ( ! class_exists( 'Spacious_Admin' ) ) :
 			$notice_nag = get_option( 'spacious_admin_notice_welcome' );
 			if ( ! $notice_nag ) {
 				add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
-			}
+			}*/
 		}
 
 		/**
@@ -241,10 +241,6 @@ if ( ! class_exists( 'Spacious_Admin' ) ) :
 				<a href="<?php echo esc_url( 'https://themegrill.com/themes/spacious/?utm_source=spacious-about&utm_medium=theme-info-link&utm_campaign=theme-info' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'spacious' ); ?></a>
 
 				<a href="<?php echo esc_url( 'https://demo.themegrill.com/spacious/' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'spacious' ); ?></a>
-
-				<a href="<?php echo esc_url( 'https://themegrill.com/themes/spacious/?utm_source=spacious-about&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'spacious' ); ?></a>
-
-				<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/spacious/reviews?rate=5#new-post' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'spacious' ); ?></a>
 			</p>
 
 			<h2 class="nav-tab-wrapper">
@@ -371,21 +367,6 @@ if ( ! class_exists( 'Spacious_Admin' ) ) :
 							</p>
 						</div>
 
-						<div class="col">
-							<h3><?php esc_html_e( 'Need more features?', 'spacious' ); ?></h3>
-							<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'spacious' ) ?></p>
-							<p>
-								<a href="<?php echo esc_url( 'https://themegrill.com/themes/spacious/?utm_source=spacious-about&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View Pro', 'spacious' ); ?></a>
-							</p>
-						</div>
-
-						<div class="col">
-							<h3><?php esc_html_e( 'Got sales related question?', 'spacious' ); ?></h3>
-							<p><?php esc_html_e( 'Please send it via our sales contact page.', 'spacious' ) ?></p>
-							<p>
-								<a href="<?php echo esc_url( 'https://themegrill.com/contact/?utm_source=spacious-about&utm_medium=contact-page-link&utm_campaign=contact-page' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Contact Page', 'spacious' ); ?></a>
-							</p>
-						</div>
 
 						<div class="col">
 							<h3>
@@ -529,7 +510,6 @@ if ( ! class_exists( 'Spacious_Admin' ) ) :
 
 				<?php $this->intro(); ?>
 
-				<p class="about-description"><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'spacious' ); ?></p>
 
 				<table>
 					<thead>

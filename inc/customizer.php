@@ -73,7 +73,7 @@ function spacious_customize_register( $wp_customize ) {
 
 	// Register `SPACIOUS_Upsell_Section` type section.
 	$wp_customize->register_section_type( 'SPACIOUS_Upsell_Section' );
-
+/*
 	// Add `SPACIOUS_Upsell_Section` to display pro link.
 	$wp_customize->add_section(
 		new SPACIOUS_Upsell_Section( $wp_customize, 'spacious_upsell_section',
@@ -84,7 +84,7 @@ function spacious_customize_register( $wp_customize ) {
 				'priority'   => 1,
 			)
 		)
-	);
+	);*/
 	/*
 	 * Assigning the theme name
 	 */

@@ -35,6 +35,7 @@ class Spacious_Typography_Control extends WP_Customize_Control {
 			?>
 
 			<?php
+			/*
 			// Google font options
 			if ( $google_fonts = spacious_google_fonts() ) { ?>
 				<optgroup label="<?php esc_html_e( 'Google Fonts', 'spacious' ); ?>">
@@ -44,7 +45,7 @@ class Spacious_Typography_Control extends WP_Customize_Control {
 						<option value="<?php echo esc_html( $font ); ?>" <?php selected( $font, $this_value ); ?>><?php echo esc_html( $font ); ?></option>
 					<?php } ?>
 				</optgroup>
-			<?php } ?>
+			<?php }*/ ?>
 
 		</select>
 
